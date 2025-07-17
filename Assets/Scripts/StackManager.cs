@@ -6,6 +6,8 @@ public class StackManager : MonoBehaviour
     public Transform stackPoint;          
     public float verticalOffset = 0.5f;  
     public float verticalSpacing = 1f;
+    Vector3 velocity = Vector3.zero;
+
     public float followSpeed = 5f;
     private List<Transform> stackedEnemies = new();
 
@@ -39,10 +41,11 @@ public class StackManager : MonoBehaviour
     {
         for (int i = 0; i < stackedEnemies.Count; i++)
         {
+            Transform current = stackedEnemies[i];
             Transform target = (i == 0) ? stackPoint : stackedEnemies[i - 1];
-
             Vector3 targetPos = target.position + Vector3.up * verticalSpacing;
-            stackedEnemies[i].position = Vector3.Lerp(stackedEnemies[i].position, targetPos, Time.deltaTime * followSpeed);
+
+            current.position = Vector3.SmoothDamp(current.position, targetPos, ref velocity, 0.1f);
         }
     }
 

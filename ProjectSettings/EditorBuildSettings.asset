@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/Assets67Bits/Human_cloth_model/_Demo/DemoScene.unity
+    guid: 5299773511c88654da8fcb5f195bf5db
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: dc6bbb5762dd66c46962435c7a732dd5, type: 3}
   m_UseUCBPForAssetBundles: 0
